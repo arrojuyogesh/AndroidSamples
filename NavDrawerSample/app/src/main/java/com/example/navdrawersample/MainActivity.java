@@ -62,4 +62,10 @@ public class MainActivity<pulbic> extends AppCompatActivity {
         activity.startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+
+    }
+
 }

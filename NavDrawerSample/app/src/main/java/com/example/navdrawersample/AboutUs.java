@@ -1,9 +1,12 @@
 package com.example.navdrawersample;
 
+import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import static com.example.navdrawersample.MainActivity.closeDrawer;
 
 public class AboutUs extends AppCompatActivity {
 
@@ -41,6 +44,16 @@ public class AboutUs extends AppCompatActivity {
 
     public void ClickAboutUs(View view){
         recreate();
+
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        closeDrawer(drawerLayout);
+    }
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
 
     }
 

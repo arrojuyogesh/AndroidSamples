@@ -52,4 +52,10 @@ public class Dashboard extends AppCompatActivity {
         super.onPause();
         closeDrawer(drawerLayout);
     }
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+
+    }
+
 }
