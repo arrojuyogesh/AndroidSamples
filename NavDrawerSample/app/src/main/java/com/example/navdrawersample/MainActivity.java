@@ -7,11 +7,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity<pulbic> extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
-
+    Activity tempactivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +45,15 @@ public class MainActivity<pulbic> extends AppCompatActivity {
 
     public void ClickDashboard(View view){
         redirectActivity(this,Dashboard.class);
+        closeDrawer(drawerLayout);
+        finish();
     }
 
     public void ClickAboutUs(View view){
+        closeDrawer(drawerLayout);
+
         redirectActivity(this,AboutUs.class);
+        finish();
     }
 
     public static void redirectActivity(Activity activity, Class aClass) {
@@ -55,4 +61,5 @@ public class MainActivity<pulbic> extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
     }
+
 }

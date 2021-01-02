@@ -31,6 +31,8 @@ public class Dashboard extends AppCompatActivity {
     public void ClickHome(View view){
 
         MainActivity.redirectActivity(this,MainActivity.class);
+        closeDrawer(drawerLayout);
+        finish();
     }
 
     public void ClickDashboard(View view){
@@ -42,7 +44,8 @@ public class Dashboard extends AppCompatActivity {
     public void ClickAboutUs(View view){
 
         MainActivity.redirectActivity(this,AboutUs.class);
-    }
+        closeDrawer(drawerLayout);
+        finish();    }
 
     @Override
     protected void onPause() {

@@ -30,11 +30,13 @@ public class AboutUs extends AppCompatActivity {
     public void ClickHome(View view){
 
         MainActivity.redirectActivity(this,MainActivity.class);
-    }
+        MainActivity.closeDrawer(drawerLayout);
+        finish();    }
 
     public void ClickDashboard(View view){
         MainActivity.redirectActivity(this,Dashboard.class);
-
+        MainActivity.closeDrawer(drawerLayout);
+        finish();
     }
 
     public void ClickAboutUs(View view){
@@ -42,9 +44,4 @@ public class AboutUs extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        MainActivity.closeDrawer(drawerLayout);
-    }
 }
